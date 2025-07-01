@@ -51,12 +51,17 @@ jobs:
         name: webapp 
         path: webapp 
 
-    - uses: azure/login@v2
+        
+    - name: Login to Azure
+      uses: azure/login@v2
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      
+        # client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        # tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        # subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C49A053F009C453786EB2330FF9B4D4D }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8BFD038502D9493587D269A1FAEE92EB }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1CFFF9EC62C4424E9711B0E5044AF210 }}
+    
     - name: Deploy web app 
       uses: azure/webapps-deploy@v3
       with: 
