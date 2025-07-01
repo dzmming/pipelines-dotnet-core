@@ -51,5 +51,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: pipelines-dotnet-core-app 
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} 
+        # publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} 
         package: webapp 
